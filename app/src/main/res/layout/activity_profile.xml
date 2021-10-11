@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="user"
+            type="com.example.kepo.model.LoginResponseData" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="25dp"
+        android:orientation="vertical">
+
+        <ImageButton
+            android:id="@+id/btn_back_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_arrow_back"
+            android:layout_marginBottom="15dp"
+            android:background="@color/white">
+
+        </ImageButton>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profile_title"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:textSize="30sp">
+
+        </TextView>
+
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@drawable/ic_person"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp">
+
+        </ImageView>
+
+        <TextView
+            android:id="@+id/tv_name_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@{user.name}"
+            android:layout_gravity="center"
+            android:textColor="@color/black"
+            android:textSize="25sp">
+
+        </TextView>
+
+        <TextView
+            android:id="@+id/tv_username_profile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:textSize="15dp"
+            android:text="@{user.username}">
+
+        </TextView>
+
+        <Button
+            android:id="@+id/btn_logout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:text="@string/logout"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:backgroundTint="@color/white"
+            style="@style/Widget.AppCompat.Button.Borderless"
+            android:textColor="@color/red">
+
+        </Button>
+
+
+    </LinearLayout>
+
+</layout>

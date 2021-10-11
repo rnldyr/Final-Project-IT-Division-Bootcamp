@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".activity.SearchTodoActivity">
+
+    <data>
+        <variable
+            name="searchQuery"
+            type="String" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="25dp">
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            android:indeterminateDrawable="@drawable/progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerInParent="true"
+            android:visibility="gone" />
+
+        <TextView
+            android:id="@+id/tv_no_data_msg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/no_data"
+            android:layout_centerInParent="true"
+            android:visibility="gone">
+
+        </TextView>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageButton
+                android:id="@+id/btn_back_search_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_arrow_back"
+                android:layout_marginBottom="15dp"
+                android:background="@color/white"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentLeft="true">
+
+            </ImageButton>
+
+            <EditText
+                android:id="@+id/et_search_query"
+                android:layout_width="275dp"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="@string/search_user_hint"
+                android:background="@drawable/border"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="13dp"
+                android:text="@={searchQuery}"
+                android:textCursorDrawable="@drawable/text_cursor">
+
+            </EditText>
+
+            <ImageButton
+                android:id="@+id/btn_search_user"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_search"
+                android:layout_marginBottom="15dp"
+                android:background="@color/white"
+                android:layout_marginTop="25dp"
+                android:layout_alignParentRight="true">
+
+            </ImageButton>
+
+            <TextView
+                android:id="@+id/tv_result_msg"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_below="@+id/btn_back_search_user">
+
+            </TextView>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_search_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/tv_result_msg">
+
+            </androidx.recyclerview.widget.RecyclerView>
+
+        </RelativeLayout>
+
+    </RelativeLayout>
+
+</layout>
